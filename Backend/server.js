@@ -7,7 +7,9 @@ app.use(bodyParser());
 const mongodb = require("mongodb");
 const MongoClient = require("mongodb").MongoClient;
 const mongoose = require("mongoose");
-let config = require("./config.json");
+let config = require("./config/config.json");
+
+var user = require('./user/user.js');
 
 // Starts application.
 function AppStart() {
@@ -27,15 +29,7 @@ function AppStart() {
             var db = client.db("EcoStore");
 
             // Sample GET method (make into sep. function later)
-            app.get("/Users", (req, res, next) => {
-                db.collection("Users").find().toArray((err, results) => {
-                    if (err) {
-                        res.sendStatus(500);
-                    } else {
-                        res.json(results);
-                    }
-                });
-            });
+            user.CreateUserMethods(app, db);
 
             const port = process.env.PORT || 8000;
             // Start server.
