@@ -19,6 +19,7 @@
 		00E36601232D8983009C7FB2 /* RecyclePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E36600232D8983009C7FB2 /* RecyclePageVC.swift */; };
 		00E36603232D8A76009C7FB2 /* DataModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E36602232D8A76009C7FB2 /* DataModelManager.swift */; };
 		00E36605232D90DF009C7FB2 /* AnimalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E36604232D90DF009C7FB2 /* AnimalManager.swift */; };
+		C2CAEDBC232D9BE000330905 /* trashRecognition.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C2CAEDBB232D9BE000330905 /* trashRecognition.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		00E36600232D8983009C7FB2 /* RecyclePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecyclePageVC.swift; sourceTree = "<group>"; };
 		00E36602232D8A76009C7FB2 /* DataModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelManager.swift; sourceTree = "<group>"; };
 		00E36604232D90DF009C7FB2 /* AnimalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalManager.swift; sourceTree = "<group>"; };
+		C2CAEDBB232D9BE000330905 /* trashRecognition.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = trashRecognition.mlmodel; path = ML/trashRecognition.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				00E365DD232D66A4009C7FB2 /* EcoStore */,
 				00E365DC232D66A4009C7FB2 /* Products */,
+				C2CAEDBB232D9BE000330905 /* trashRecognition.mlmodel */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,6 +160,7 @@
 				00E365FF232D8976009C7FB2 /* AnimalsVC.swift in Sources */,
 				00E365FD232D896C009C7FB2 /* UserVC.swift in Sources */,
 				00E36605232D90DF009C7FB2 /* AnimalManager.swift in Sources */,
+				C2CAEDBC232D9BE000330905 /* trashRecognition.mlmodel in Sources */,
 				00E365F9232D7A35009C7FB2 /* MapVC.swift in Sources */,
 				00E365F5232D6BD4009C7FB2 /* CommonViewController.swift in Sources */,
 				00E365F3232D68EB009C7FB2 /* SplashScreenVC.swift in Sources */,
