@@ -10,6 +10,7 @@ function CreateUserMethods(app, db){
     });
 }
 
+
 module.exports = {
     CreateUserMethods: CreateUserMethods
 };
