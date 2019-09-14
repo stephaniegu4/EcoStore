@@ -18,7 +18,6 @@ function GetAllUsers(app, db){
     });
 }
 
-<<<<<<< HEAD
 // Checks if email already exists in database.
 function CheckEmailExists(app, db){
     app.post("/CheckEmailExists", (req, res) => {
@@ -63,8 +62,7 @@ function LoginUser(app, db) {
         }
     });
 }
-=======
->>>>>>> 20f25e9a933d19081422fd1b163ac1c2dca4c4b1
+
 
 module.exports = {
     CreateUserMethods: CreateUserMethods
