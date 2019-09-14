@@ -12,6 +12,7 @@
 		00E365F3232D68EB009C7FB2 /* SplashScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E365F2232D68EB009C7FB2 /* SplashScreenVC.swift */; };
 		00E365F5232D6BD4009C7FB2 /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E365F4232D6BD4009C7FB2 /* CommonViewController.swift */; };
 		00E365F7232D71A5009C7FB2 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E365F6232D71A5009C7FB2 /* LoginVC.swift */; };
+		00E365F9232D7A35009C7FB2 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E365F8232D7A35009C7FB2 /* MapVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		00E365F2232D68EB009C7FB2 /* SplashScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenVC.swift; sourceTree = "<group>"; };
 		00E365F4232D6BD4009C7FB2 /* CommonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
 		00E365F6232D71A5009C7FB2 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		00E365F8232D7A35009C7FB2 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				00E365F2232D68EB009C7FB2 /* SplashScreenVC.swift */,
 				00E365F6232D71A5009C7FB2 /* LoginVC.swift */,
 				00E365F4232D6BD4009C7FB2 /* CommonViewController.swift */,
+				00E365F8232D7A35009C7FB2 /* MapVC.swift */,
 			);
 			path = EcoStore;
 			sourceTree = "<group>";
@@ -133,6 +136,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00E365F9232D7A35009C7FB2 /* MapVC.swift in Sources */,
 				00E365F5232D6BD4009C7FB2 /* CommonViewController.swift in Sources */,
 				00E365F3232D68EB009C7FB2 /* SplashScreenVC.swift in Sources */,
 				00E365F7232D71A5009C7FB2 /* LoginVC.swift in Sources */,
