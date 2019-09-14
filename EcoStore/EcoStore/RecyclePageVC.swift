@@ -10,6 +10,9 @@ import UIKit
 
 class RecyclePageVC: CommonViewController {
     
+    // MARK:- Variables
+    
+    // MARK:- Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
