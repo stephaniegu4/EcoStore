@@ -47,7 +47,7 @@ class LoginVC : CommonViewController {
         passwordField.isSecureTextEntry = true
         view.addSubview(passwordField)
         
-        loginButton.setTitle("Login", for: .normal)
+        loginButton.setTitle("LOGIN", for: .normal)
         loginButton.setTitleColor(.white, for: .normal)
         loginButton.backgroundColor = UIColor.fromRGB(10, 83, 139)
         loginButton.addTarget(self, action: #selector(loginAction), for: .touchUpInside)
@@ -80,6 +80,8 @@ class LoginVC : CommonViewController {
     
     //MARK:- Control Actions
     @objc func loginAction() {
-        
+        let mapVC = TabBarController()
+        mapVC.modalTransitionStyle = .coverVertical
+        self.present(mapVC, animated: true, completion: nil)
     }
 }

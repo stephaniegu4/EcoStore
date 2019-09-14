@@ -13,6 +13,10 @@
 		00E365F5232D6BD4009C7FB2 /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E365F4232D6BD4009C7FB2 /* CommonViewController.swift */; };
 		00E365F7232D71A5009C7FB2 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E365F6232D71A5009C7FB2 /* LoginVC.swift */; };
 		00E365F9232D7A35009C7FB2 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E365F8232D7A35009C7FB2 /* MapVC.swift */; };
+		00E365FB232D7D35009C7FB2 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E365FA232D7D35009C7FB2 /* TabBarController.swift */; };
+		00E365FD232D896C009C7FB2 /* UserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E365FC232D896C009C7FB2 /* UserVC.swift */; };
+		00E365FF232D8976009C7FB2 /* AnimalsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E365FE232D8976009C7FB2 /* AnimalsVC.swift */; };
+		00E36601232D8983009C7FB2 /* RecyclePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E36600232D8983009C7FB2 /* RecyclePageVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		00E365F4232D6BD4009C7FB2 /* CommonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
 		00E365F6232D71A5009C7FB2 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		00E365F8232D7A35009C7FB2 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		00E365FA232D7D35009C7FB2 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		00E365FC232D896C009C7FB2 /* UserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVC.swift; sourceTree = "<group>"; };
+		00E365FE232D8976009C7FB2 /* AnimalsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsVC.swift; sourceTree = "<group>"; };
+		00E36600232D8983009C7FB2 /* RecyclePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecyclePageVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +71,10 @@
 				00E365F6232D71A5009C7FB2 /* LoginVC.swift */,
 				00E365F4232D6BD4009C7FB2 /* CommonViewController.swift */,
 				00E365F8232D7A35009C7FB2 /* MapVC.swift */,
+				00E365FA232D7D35009C7FB2 /* TabBarController.swift */,
+				00E365FC232D896C009C7FB2 /* UserVC.swift */,
+				00E365FE232D8976009C7FB2 /* AnimalsVC.swift */,
+				00E36600232D8983009C7FB2 /* RecyclePageVC.swift */,
 			);
 			path = EcoStore;
 			sourceTree = "<group>";
@@ -136,11 +148,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00E365FF232D8976009C7FB2 /* AnimalsVC.swift in Sources */,
+				00E365FD232D896C009C7FB2 /* UserVC.swift in Sources */,
 				00E365F9232D7A35009C7FB2 /* MapVC.swift in Sources */,
 				00E365F5232D6BD4009C7FB2 /* CommonViewController.swift in Sources */,
 				00E365F3232D68EB009C7FB2 /* SplashScreenVC.swift in Sources */,
+				00E365FB232D7D35009C7FB2 /* TabBarController.swift in Sources */,
 				00E365F7232D71A5009C7FB2 /* LoginVC.swift in Sources */,
 				00E365F0232D6881009C7FB2 /* AppDelegate.swift in Sources */,
+				00E36601232D8983009C7FB2 /* RecyclePageVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

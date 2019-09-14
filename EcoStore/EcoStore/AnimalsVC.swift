@@ -1,5 +1,5 @@
 //
-//  MapVC.swift
+//  AnimalsVC.swift
 //  EcoStore
 //
 //  Created by Stephanie Gu on 2019-09-14.
@@ -8,9 +8,8 @@
 
 import UIKit
 
-class MapVC : CommonViewController {
+class AnimalsVC: CommonViewController {
     
-    //MARK:- Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
