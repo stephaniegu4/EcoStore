@@ -19,6 +19,7 @@
 		00E36601232D8983009C7FB2 /* RecyclePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E36600232D8983009C7FB2 /* RecyclePageVC.swift */; };
 		00E36603232D8A76009C7FB2 /* DataModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E36602232D8A76009C7FB2 /* DataModelManager.swift */; };
 		00E36605232D90DF009C7FB2 /* AnimalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E36604232D90DF009C7FB2 /* AnimalManager.swift */; };
+		00E36607232DC14D009C7FB2 /* AnimalModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E36606232DC14D009C7FB2 /* AnimalModalVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		00E36600232D8983009C7FB2 /* RecyclePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecyclePageVC.swift; sourceTree = "<group>"; };
 		00E36602232D8A76009C7FB2 /* DataModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelManager.swift; sourceTree = "<group>"; };
 		00E36604232D90DF009C7FB2 /* AnimalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalManager.swift; sourceTree = "<group>"; };
+		00E36606232DC14D009C7FB2 /* AnimalModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalModalVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				00E36602232D8A76009C7FB2 /* DataModelManager.swift */,
 				00E36604232D90DF009C7FB2 /* AnimalManager.swift */,
 				00E36600232D8983009C7FB2 /* RecyclePageVC.swift */,
+				00E36606232DC14D009C7FB2 /* AnimalModalVC.swift */,
 			);
 			path = EcoStore;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				00E365FB232D7D35009C7FB2 /* TabBarController.swift in Sources */,
 				00E365F7232D71A5009C7FB2 /* LoginVC.swift in Sources */,
 				00E365F0232D6881009C7FB2 /* AppDelegate.swift in Sources */,
+				00E36607232DC14D009C7FB2 /* AnimalModalVC.swift in Sources */,
 				00E36601232D8983009C7FB2 /* RecyclePageVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

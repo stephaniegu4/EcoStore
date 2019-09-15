@@ -7,12 +7,36 @@
 //
 
 import UIKit
+//
 
 class AnimalsVC: CommonViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.backgroundColor = .white
-    }
 }
+//class AnimalsVC: CommonViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+//
+//    private let animals = DMM.animals
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//        view.backgroundColor = .white
+//    }
+//
+//    // MARK:- Collection View
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        animals.count
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//
+//    }
+//
+//}
+//
+//class AnimalCell: UICollectionViewCell {
+//
+//    //func layoutSubviews() {
+//      //  super.layoutSubviews()
+//
+//    //}
+//}

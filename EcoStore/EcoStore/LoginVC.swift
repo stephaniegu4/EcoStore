@@ -36,18 +36,19 @@ class LoginVC : CommonViewController {
         appTitle.textAlignment = .center
         view.addSubview(appTitle)
         
-        userField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
+        userField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray, NSAttributedString.Key.font: UIFont(name: "AvenirNext-UltraLight", size: 16)!])
         userField.borderStyle = .roundedRect
         userField.autocapitalizationType = .none
         userField.autocorrectionType = .no
         view.addSubview(userField)
         
-        passwordField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
+        passwordField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray, NSAttributedString.Key.font: UIFont(name: "AvenirNext-UltraLight", size: 16)!])
         passwordField.borderStyle = .roundedRect
         passwordField.isSecureTextEntry = true
         view.addSubview(passwordField)
         
         loginButton.setTitle("LOGIN", for: .normal)
+        loginButton.titleLabel?.font = UIFont(name: "AvenirNext-DemiBold", size: 20)
         loginButton.setTitleColor(.white, for: .normal)
         loginButton.backgroundColor = UIColor.fromRGB(10, 83, 139)
         loginButton.addTarget(self, action: #selector(loginAction), for: .touchUpInside)

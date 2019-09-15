@@ -18,8 +18,6 @@ class MapVC : CommonViewController {
     
     private let animals = DMM.animals
     
-    private let imageView = UIImageView()
-    
 //    private let tempBlob = UIImageView()
 //    private let blobImage = UIImage(named:"water")
     
@@ -33,12 +31,7 @@ class MapVC : CommonViewController {
         
         roadView.image = roadImage
         scrollView.addSubview(roadView)
-        
-        let imageUrl = animals[0]["imgUrl"] as? String
-        imageView.image = UIImage(named: imageUrl ?? "turtle-icon")
-        scrollView.addSubview(imageView)
     
-        
 //        tempBlob.image = blobImage
 //        view.addSubview(tempBlob)
     }
@@ -50,19 +43,22 @@ class MapVC : CommonViewController {
         var y: CGFloat = 100
         var totalContentSize = y
         
-        for animal in animals {
+        for (index, animal) in animals.enumerated() {
             let imageUrl = animal["imgUrl"] as? String
-            let imageView = UIImageView(image: UIImage(named:imageUrl ?? "turtle-icon"))
-            imageView.frame = CGRect(x: 0, y: y, width: 100, height: 100)
+            let button = UIButton(type: .custom)
+            button.tag = index
+            button.setImage(UIImage(named: imageUrl ?? "turtle-icon"), for: .normal)
+            button.addTarget(self, action: #selector(openAnimalModal), for: .touchUpInside)
+            button.frame = CGRect(x: 0, y: y, width: 100, height: 100)
             if leftAlign {
-                imageView.center.x = view.frame.width / 4
+                button.center.x = view.frame.width / 4
             } else {
-                imageView.center.x = view.frame.width * (3 / 4)
+                button.center.x = view.frame.width * (3 / 4)
             }
             leftAlign = !leftAlign
-            scrollView.addSubview(imageView)
-            y += (imageView.frame.height + 100)
-            totalContentSize += (imageView.frame.height + 100)
+            scrollView.addSubview(button)
+            y += (button.frame.height + 100)
+            totalContentSize += (button.frame.height + 100)
         }
         
         scrollView.contentSize = CGSize(width: view.frame.width, height: totalContentSize)
@@ -71,5 +67,13 @@ class MapVC : CommonViewController {
         roadView.frame = CGRect(x: 0, y: -20, width: 200, height: totalContentSize + 80)
         roadView.center.x = view.center.x
         
+    }
+    
+    // MARK:- Control Action
+    @objc func openAnimalModal(sender: UIButton!) {
+        let modalVC = AnimalModalVC(animal: animals[sender.tag])
+        modalVC.modalTransitionStyle = .crossDissolve
+        modalVC.modalPresentationStyle = .overFullScreen
+        self.present(modalVC, animated: true, completion: nil)
     }
 }
