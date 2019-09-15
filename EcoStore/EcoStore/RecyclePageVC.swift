@@ -81,62 +81,43 @@ class RecyclePageVC: CommonViewController, AVCaptureVideoDataOutputSampleBufferD
     
     // MARK:- Control Actions
     @objc func cameraAction() {
-        // starting up the camera
-        let captureSession = AVCaptureSession()
-        
-        guard let captureDevice = AVCaptureDevice.default(for: .video) else { return }
-        guard let input = try? AVCaptureDeviceInput(device: captureDevice) else { return }
-        captureSession.addInput(input)
-        
-        captureSession.startRunning()
-        let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        view.layer.addSublayer(previewLayer)
-        previewLayer.frame = view.frame
-        
-        // accessing camera frame layer
-        let dataOutput = AVCaptureVideoDataOutput()
-        dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
-        captureSession.addOutput(dataOutput)
-//        let dataOutput = AVCapturePhotoOutput()
-//        guard captureSession.canAddOutput(dataOutput) else { return }
-//        captureSession.addOutput(dataOutput)
-//        print(dataOutput)
-//        captureSession.commitConfiguration()
-
-
+        let cameraVC = RecycleCameraVC()
+        cameraVC.modalTransitionStyle = .crossDissolve
+        cameraVC.modalPresentationStyle = .overFullScreen
+        self.present(cameraVC, animated: true, completion: nil)
     }
     
-    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-//        print("Camera was able to capture a frame", Date())
-        
-        guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
-        
-        guard let model = try? VNCoreMLModel(for: trashRecognition().model) else { return }
-        let request = VNCoreMLRequest(model: model)
-            { (finishedReq, err) in
-                
-            guard let results = finishedReq.results as?
-                [VNClassificationObservation] else { return }
-                
-            guard let firstObservation = results.first else { return }
-            
-            if (firstObservation.confidence > 0.9) {
-                self.createAlert(title: "Success!", message: firstObservation.identifier + " with a confidence of " + firstObservation.confidence.description)
-            }
-            print(firstObservation.identifier, firstObservation.confidence)
-        }
-        
-        try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
-
-    }
-    
-    func createAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
-            (action) in alert.dismiss(animated: true, completion: nil)
-        }))
-        
-        self.present(alert, animated: true, completion: nil)
-    }
+//    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+////        print("Camera was able to capture a frame", Date())
+//        
+//        guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
+//        
+//        guard let model = try? VNCoreMLModel(for: trashRecognition().model) else { return }
+//        let request = VNCoreMLRequest(model: model)
+//            { (finishedReq, err) in
+//                
+//            guard let results = finishedReq.results as?
+//                [VNClassificationObservation] else { return }
+//                
+//            guard let firstObservation = results.first else { return }
+//            
+//            if (firstObservation.confidence > 0.9) {
+//                self.createAlert(title: "Success!", message: firstObservation.identifier + " with a confidence of " + firstObservation.confidence.description)
+//            }
+//            print(firstObservation.identifier, firstObservation.confidence)
+//        }
+//        
+//        try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
+//
+//    }
+//    
+//    func createAlert(title: String, message: String) {
+//        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+//        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
+//            (action) in alert.dismiss(animated: true, completion: nil)
+//        }))
+//        
+//        self.present(alert, animated: true, completion: nil)
+//    }
 }
 

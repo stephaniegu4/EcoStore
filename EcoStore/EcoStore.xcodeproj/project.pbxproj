@@ -20,6 +20,7 @@
 		00E36603232D8A76009C7FB2 /* DataModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E36602232D8A76009C7FB2 /* DataModelManager.swift */; };
 		00E36605232D90DF009C7FB2 /* AnimalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E36604232D90DF009C7FB2 /* AnimalManager.swift */; };
 		00E36607232DC14D009C7FB2 /* AnimalModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E36606232DC14D009C7FB2 /* AnimalModalVC.swift */; };
+		C2A6719E232E2CD900CD9E65 /* RecycleCameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A6719D232E2CD900CD9E65 /* RecycleCameraVC.swift */; };
 		C2CAEDC0232DAFF500330905 /* trashRecognition.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C2CAEDBF232DAFF500330905 /* trashRecognition.mlmodel */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		00E36602232D8A76009C7FB2 /* DataModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelManager.swift; sourceTree = "<group>"; };
 		00E36604232D90DF009C7FB2 /* AnimalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalManager.swift; sourceTree = "<group>"; };
 		00E36606232DC14D009C7FB2 /* AnimalModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalModalVC.swift; sourceTree = "<group>"; };
+		C2A6719D232E2CD900CD9E65 /* RecycleCameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleCameraVC.swift; sourceTree = "<group>"; };
 		C2CAEDBF232DAFF500330905 /* trashRecognition.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = trashRecognition.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 				00E36602232D8A76009C7FB2 /* DataModelManager.swift */,
 				00E36604232D90DF009C7FB2 /* AnimalManager.swift */,
 				00E36600232D8983009C7FB2 /* RecyclePageVC.swift */,
+				C2A6719D232E2CD900CD9E65 /* RecycleCameraVC.swift */,
 				00E36606232DC14D009C7FB2 /* AnimalModalVC.swift */,
 			);
 			path = EcoStore;
@@ -167,6 +170,7 @@
 				00E365F9232D7A35009C7FB2 /* MapVC.swift in Sources */,
 				00E365F5232D6BD4009C7FB2 /* CommonViewController.swift in Sources */,
 				00E365F3232D68EB009C7FB2 /* SplashScreenVC.swift in Sources */,
+				C2A6719E232E2CD900CD9E65 /* RecycleCameraVC.swift in Sources */,
 				00E36603232D8A76009C7FB2 /* DataModelManager.swift in Sources */,
 				00E365FB232D7D35009C7FB2 /* TabBarController.swift in Sources */,
 				00E365F7232D71A5009C7FB2 /* LoginVC.swift in Sources */,
