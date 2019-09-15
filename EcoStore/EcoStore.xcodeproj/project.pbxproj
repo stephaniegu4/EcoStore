@@ -20,6 +20,7 @@
 		00E36603232D8A76009C7FB2 /* DataModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E36602232D8A76009C7FB2 /* DataModelManager.swift */; };
 		00E36605232D90DF009C7FB2 /* AnimalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E36604232D90DF009C7FB2 /* AnimalManager.swift */; };
 		00E36607232DC14D009C7FB2 /* AnimalModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E36606232DC14D009C7FB2 /* AnimalModalVC.swift */; };
+		C2CAEDC0232DAFF500330905 /* trashRecognition.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C2CAEDBF232DAFF500330905 /* trashRecognition.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		00E36602232D8A76009C7FB2 /* DataModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelManager.swift; sourceTree = "<group>"; };
 		00E36604232D90DF009C7FB2 /* AnimalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalManager.swift; sourceTree = "<group>"; };
 		00E36606232DC14D009C7FB2 /* AnimalModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalModalVC.swift; sourceTree = "<group>"; };
+		C2CAEDBF232DAFF500330905 /* trashRecognition.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = trashRecognition.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		00E365DD232D66A4009C7FB2 /* EcoStore */ = {
 			isa = PBXGroup;
 			children = (
+				C2CAEDBF232DAFF500330905 /* trashRecognition.mlmodel */,
 				00E365DE232D66A4009C7FB2 /* AppDelegate.swift */,
 				00E365E5232D66A5009C7FB2 /* Assets.xcassets */,
 				00E365EA232D66A5009C7FB2 /* Info.plist */,
@@ -160,6 +163,7 @@
 				00E365FF232D8976009C7FB2 /* AnimalsVC.swift in Sources */,
 				00E365FD232D896C009C7FB2 /* UserVC.swift in Sources */,
 				00E36605232D90DF009C7FB2 /* AnimalManager.swift in Sources */,
+				C2CAEDC0232DAFF500330905 /* trashRecognition.mlmodel in Sources */,
 				00E365F9232D7A35009C7FB2 /* MapVC.swift in Sources */,
 				00E365F5232D6BD4009C7FB2 /* CommonViewController.swift in Sources */,
 				00E365F3232D68EB009C7FB2 /* SplashScreenVC.swift in Sources */,
@@ -296,6 +300,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				COREML_CODEGEN_LANGUAGE = Swift;
+				DEVELOPMENT_TEAM = QH52ZML97T;
 				INFOPLIST_FILE = EcoStore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -314,6 +320,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				COREML_CODEGEN_LANGUAGE = Swift;
+				DEVELOPMENT_TEAM = QH52ZML97T;
 				INFOPLIST_FILE = EcoStore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
