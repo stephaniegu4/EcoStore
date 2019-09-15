@@ -87,6 +87,12 @@ class AnimalModalVC: CommonViewController {
         modalView.center = view.center
         modalView.layer.cornerRadius = 20
         
+        modalView.layer.masksToBounds = false
+        modalView.layer.shadowColor = UIColor.black.cgColor
+        modalView.layer.shadowRadius = 10
+        modalView.layer.shadowOpacity = 0.5
+        modalView.layer.shadowOffset = .zero
+        
         cancelButton.frame = CGRect(x: modalView.frame.width - 40, y: 10, width: 30, height: 30)
         
         nameLabel.frame = CGRect(x: 0, y: 50, width: modalView.frame.width - 40, height: 40)
