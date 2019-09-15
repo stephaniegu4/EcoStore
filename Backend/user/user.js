@@ -1,8 +1,14 @@
+var bcrypt = require("bcryptjs");
+const mongodb = require("mongodb");
+
+let Users = require("./userschema.js");
 // Creates necessary user endpoints.
 function CreateUserMethods(app, db){
     GetAllUsers(app, db);
     LoginUser(app, db);
     CheckEmailExists(app, db);
+    DeleteUser(app, db);
+    AddUser(app, db);
 }
 
 // Returns all Users currently in database.
@@ -42,7 +48,7 @@ function CheckEmailExists(app, db){
 // Gets hashed password from database, given user's id.
 function GetUserPassword(db, id) {
     db.collection("Users").findOne({_id: id}).then((result) => {
-        
+
     });
 }
 
@@ -61,6 +67,70 @@ function LoginUser(app, db) {
             // Get password from db.
         }
     });
+}
+
+// Creates a new user
+function AddUser(app, db){
+  app.post("/AddUser", (req, res) => {
+    var newUser = new Users(req.body);
+    newUser.validate(function (err){
+      if (err) {
+        res.json({
+          code: 500,
+          msg: "User entry was invalid"
+        });
+      } else {
+        bcrypt.genSalt(10, function(err, salt) {
+          bcrypt.hash(req.body.password, salt, (err, hash) => {
+            db.collection("Users").insertOne({
+              username: req.body.username,
+              password: hash,
+              email: req.body.email,
+              image: req.body.image,
+              points: req.body.points,
+              restoredAnimals: req.body.restoredAnimals
+            }, (err, results) => {
+              if (err){
+                res.json({
+                  code: 500,
+                  message: "Failed to create user"
+                });
+              } else{
+                res.sendStatus(200);
+              }
+            });
+          });
+        });
+      }
+    });
+    });
+  }
+
+// Deletes user based on id
+function DeleteUser(app, db) {
+  app.post("/DeleteUser", (req, res) => {
+    if( "id" in req.body) {
+      var id = req.body.id;
+      db.collection("Users").find({_id: id}).toArray((err, results) => {
+        if (err) {
+          res.sendStatus(500);
+        } else if (results.length == 0){
+          db.collection("Users").remove({_id: new mongodb.ObjectId(id)});
+          res.json([id]);
+        } else {
+          res.json({
+            code: 500,
+            msg: "Id does not exist"
+          });
+        }
+      });
+    } else {
+      res.json({
+        code: 500,
+        msg: "Id was null"
+      });
+    }
+  });
 }
 
 
