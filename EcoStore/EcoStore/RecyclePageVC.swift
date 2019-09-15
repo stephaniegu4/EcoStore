@@ -94,14 +94,14 @@ class RecyclePageVC: CommonViewController, AVCaptureVideoDataOutputSampleBufferD
         previewLayer.frame = view.frame
         
         // accessing camera frame layer
-//        let dataOutput = AVCaptureVideoDataOutput()
-//        dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
-//        captureSession.addOutput(dataOutput)
-        let dataOutput = AVCapturePhotoOutput()
-        guard captureSession.canAddOutput(dataOutput) else { return }
+        let dataOutput = AVCaptureVideoDataOutput()
+        dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
         captureSession.addOutput(dataOutput)
-        print(dataOutput)
-        captureSession.commitConfiguration()
+//        let dataOutput = AVCapturePhotoOutput()
+//        guard captureSession.canAddOutput(dataOutput) else { return }
+//        captureSession.addOutput(dataOutput)
+//        print(dataOutput)
+//        captureSession.commitConfiguration()
 
 
     }
