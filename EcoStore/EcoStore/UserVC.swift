@@ -45,12 +45,12 @@ class UserVC: CommonViewController {
         profileImgView.image = profileImg
         topView.addSubview(profileImgView)
         
-        nameLabel.text = "Temp Name"
+        nameLabel.text = WebServicesManager.shared.userName
         nameLabel.font = UIFont(name: "AvenirNext-Bold", size: 30)
         nameLabel.textAlignment = .center
         topView.addSubview(nameLabel)
         
-        emailLabel.text = "stephaniegu7h@gmail.com"
+        emailLabel.text = WebServicesManager.shared.userEmail
         emailLabel.font = UIFont(name: "AvenirNext-UltraLightItalic", size: 18)
         emailLabel.textAlignment = .center
         topView.addSubview(emailLabel)
@@ -58,7 +58,7 @@ class UserVC: CommonViewController {
         pointsIconView.image = pointsIcon
         pointsView.addSubview(pointsIconView)
         
-        pointsLabel.text = "35"
+        pointsLabel.text = "\(WebServicesManager.shared.userPoints ?? 0)"
         pointsLabel.textAlignment = .center
         pointsLabel.font = UIFont(name: "AvenirNext-Regular", size: 25)
         pointsView.addSubview(pointsLabel)
@@ -68,7 +68,7 @@ class UserVC: CommonViewController {
         restoredIconView.image = restoredIcon
         restoredView.addSubview(restoredIconView)
         
-        restoredLabel.text = "3 animals restored!"
+        restoredLabel.text = "\(AnimalManager.shared.restoredAnimalData?.count ?? 0) animals restored!"
         restoredLabel.font = UIFont(name: "AvenirNext-Regular", size: 25)
         restoredLabel.textAlignment = .center
         restoredView.addSubview(restoredLabel)

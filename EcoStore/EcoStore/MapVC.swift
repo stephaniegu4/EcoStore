@@ -17,9 +17,8 @@ class MapVC : CommonViewController {
     private let roadImage = UIImage(named:"path1")
     
     private let animals = DMM.animals
+    private let restored: [Int]? = AnimalManager.shared.restoredAnimalData
     
-//    private let tempBlob = UIImageView()
-//    private let blobImage = UIImage(named:"water")
     
     //MARK:- Lifecycle
     override func viewDidLoad() {
@@ -32,8 +31,6 @@ class MapVC : CommonViewController {
         roadView.image = roadImage
         scrollView.addSubview(roadView)
     
-//        tempBlob.image = blobImage
-//        view.addSubview(tempBlob)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,6 +53,9 @@ class MapVC : CommonViewController {
                 button.center.x = view.frame.width * (3 / 4)
             }
             leftAlign = !leftAlign
+            if let restored = restored?.contains(index), !restored {
+                button.alpha = 0.5
+            }
             scrollView.addSubview(button)
             y += (button.frame.height + 100)
             totalContentSize += (button.frame.height + 100)

@@ -13,24 +13,24 @@ class AnimalManager {
     static var shared = AnimalManager()
     
     //MARK:- User Default Animal Data
-    public var allAnimalData: [String:AnyObject]? {
+    public var restoredAnimalData: [Int]? {
         set {
-            UserDefaults.standard.set(newValue, forKey: "allAnimalData")
+            UserDefaults.standard.set(newValue, forKey: "restoredAnimalData")
             updateLocalData()
         }
         get {
-            if let localData = localAllAnimalData, localData.count > 0 {
-                return localAllAnimalData
+            if let localData = localRestoredAnimalData, localData.count > 0 {
+                return localRestoredAnimalData
             } else {
-                return UserDefaults.standard.object(forKey: "allAnimalData") as? [String:AnyObject]
+                return UserDefaults.standard.object(forKey: "restoredAnimalData") as? [Int]
             }
         }
     }
     
-    private var localAllAnimalData: [String:AnyObject]? = nil
+    private var localRestoredAnimalData: [Int]? = nil
     
     private func updateLocalData() {
-        localAllAnimalData = allAnimalData
+        localRestoredAnimalData = restoredAnimalData
     }
     
 }

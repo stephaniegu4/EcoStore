@@ -81,8 +81,16 @@ class LoginVC : CommonViewController {
     
     //MARK:- Control Actions
     @objc func loginAction() {
-        let mapVC = TabBarController()
-        mapVC.modalTransitionStyle = .coverVertical
-        self.present(mapVC, animated: true, completion: nil)
+        WebServicesManager.shared.loginService(loginEmail: userField.text ?? "temp", loginPassword: passwordField.text ?? "temp") { success in
+            if !success {
+                let alertVC = UIAlertController(title: nil, message: "Error logging in.", preferredStyle: .alert)
+                alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alertVC, animated: true, completion: nil)
+            } else {
+                let mapVC = TabBarController()
+                mapVC.modalTransitionStyle = .coverVertical
+                self.present(mapVC, animated: true, completion: nil)
+            }
+        }
     }
 }
