@@ -32,14 +32,22 @@ function CheckEmailExists(app, db){
         var email = req.body.email;
 
         if (!email){
-            res.sendStatus(500);
+            res.json({
+                code: 400,
+                msg: "The provided email is undefined."
+            })
         } else {
             db.collection("Users").find({email: email}).toArray((err, results) => {
                 if (err) {
-                    res.sendStatus(500);
+                    res.json({
+                        code: 500,
+                        msg: "An error occurred while searching the database."
+                    });
                 }else{
                     res.json({
-                        exists: !(results.length === 0)
+                        code: 200,
+                        msg: "Email existence successfully checked.",
+                        emailExists: !(results.length === 0)
                     });
                 }
             });
@@ -47,7 +55,7 @@ function CheckEmailExists(app, db){
     });
 }
 
-// Logs in user, given username and password.
+// Logs in user, given email and password.
 function LoginUser(app, db) {
     app.post("/LoginUser", (req, res) => {
         var email = req.body.email;
@@ -56,7 +64,7 @@ function LoginUser(app, db) {
         if (!email || !password) {
             res.json({
                 code: 500,
-                msg: "Either username or password was null."
+                msg: "Either the given email or password was null."
             });
         } else {
             db.collection("Users").find({ email: email }).toArray((err, result) => {
@@ -68,20 +76,20 @@ function LoginUser(app, db) {
                         if (result2) {
                             res.json({
                                 code: 200,
-                                msg: "Successfully logged in",
+                                msg: "User successfully logged in.",
                                 userData: result[0]
                             });
                         } else {
                             res.json({
                                 code: 403,
-                                msg: "Password is incorrect"
+                                msg: "The given password is incorrect."
                             });
                         }
                     });
                 } else {
                     res.json({
                         code: 500,
-                        msg: "No user was found with that username."
+                        msg: "No user was found with the given email."
                     });
                 }
             });
@@ -97,10 +105,9 @@ function IncrementUserPoints(app, db){
         if (!id) {
             res.json({
                 code: 400,
-                msg: "Given user ID was invalid."
+                msg: "The provided user ID was invalid."
             });
         } else {
-
             try {
                 db.collection("Users").find({_id: new mongodb.ObjectID(id)}).toArray((err, result) => {
                     if (err){
@@ -123,13 +130,13 @@ function IncrementUserPoints(app, db){
                                 if (updatedDoc) {
                                   res.json({
                                       code: 200,
-                                      msg: "Points successfully updated",
+                                      msg: "The user's points were successfully updated.",
                                       updatedPoints: updatedDoc.value.points
                                   });
                                 } else {
                                     res.json({
                                         code: 400,
-                                        msg: "Cound not find user with given ID"
+                                        msg: "A user with the given ID could not be found."
                                     });
                                 }
                               })
@@ -178,7 +185,7 @@ function AddRestoredAnimal(app, db){
                         var userToUpdate = result[0];
                         var prevAnimals = userToUpdate.restoredAnimals;
 
-                        if (prevAnimals.indexOf(animalID) != -1){
+                        if (prevAnimals.indexOf(animalID) >= 0){
                             res.json({
                                 code: 400,
                                 msg: "This animal already belongs to the user."
@@ -195,13 +202,13 @@ function AddRestoredAnimal(app, db){
                                 if (updatedDoc) {
                                   res.json({
                                       code: 200,
-                                      msg: "Animals successfully updated",
+                                      msg: "The user's restored animals were successfully updated.",
                                       updatedAnimals: prevAnimals
                                   });
                                 } else {
                                     res.json({
                                         code: 400, 
-                                        msg: "Could not find user with given ID"
+                                        msg: "Could not find a user with the given ID"
                                     });
                                 }
                               })
@@ -227,17 +234,19 @@ function AddRestoredAnimal(app, db){
 function AddUser(app, db){
   app.post("/AddUser", (req, res) => {
     var newUser = new Users(req.body);
+    console.log(req.body);
+    console.log(newUser);
     newUser.validate(function (err){
       if (err) {
         res.json({
           code: 500,
-          msg: "User entry was invalid"
+          msg: "The user information given was invalid: " + err.message
         });
       } else {
         bcrypt.genSalt(10, function(err, salt) {
           bcrypt.hash(req.body.password, salt, (err, hash) => {
             db.collection("Users").insertOne({
-              username: req.body.username,
+              name: req.body.name,
               password: hash,
               email: req.body.email,
               image: req.body.image,
@@ -247,10 +256,13 @@ function AddUser(app, db){
               if (err){
                 res.json({
                   code: 500,
-                  message: "Failed to create user"
+                  msg: "An error occurred while creating the user."
                 });
               } else{
-                res.sendStatus(200);
+                res.json({
+                    code: 200,
+                    msg: "The user was successfully created."
+                });
               }
             });
           });
@@ -267,21 +279,27 @@ function DeleteUser(app, db) {
       var id = req.body.id;
       db.collection("Users").find({_id: id}).toArray((err, results) => {
         if (err) {
-          res.sendStatus(500);
+          res.json({
+              code: 500,
+              msg: "An error occurred while searching in database."
+          });
         } else if (results.length == 0){
           db.collection("Users").remove({_id: new mongodb.ObjectId(id)});
-          res.json([id]);
+          res.json({
+              code: 200,
+              msg: "User with ID " + id + " was successfully deleted."
+            });
         } else {
           res.json({
             code: 500,
-            msg: "Id does not exist"
+            msg: "A user with the given ID could not be found."
           });
         }
       });
     } else {
       res.json({
         code: 500,
-        msg: "Id was null"
+        msg: "The provided ID was null."
       });
     }
   });
