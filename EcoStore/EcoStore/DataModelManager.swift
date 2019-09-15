@@ -8,10 +8,10 @@
 
 import UIKit
 
+// MARK:- Shared
+var DMM = DataModelManager()
+
 class DataModelManager {
-    
-    // MARK:- Shared
-    public var DMM = DataModelManager()
     
     // MARK:- Supported Animals
     /**
@@ -24,5 +24,5 @@ class DataModelManager {
      restored: Bool // default false -- when this data is retrieved at the launch of the app change these
      }
  **/
-    private var animals: [[String:Any]] = [["name":"bear", "imgUrl":"bear-icon", "description":"", "cost":2], ["name":"penguin", "imgUrl":"penguin-icon", "description":"", "cost":5], ["name":"turtle", "imgUrl":"turtle-icon", "description":"", "cost":10], ["name":"turtle", "imgUrl":"turtle-icon", "description":"", "cost":2], ["name":"turtle", "imgUrl":"turtle-icon", "description":"", "cost":2], ["name":"turtle", "imgUrl":"turtle-icon", "description":"", "cost":2], ["name":"bee", "imgUrl":"turtle-icon", "description":"", "cost":100], ["name":"turtle", "imgUrl":"turtle-icon", "description":"", "cost":2], ["name":"turtle", "imgUrl":"turtle-icon", "description":"", "cost":2]]
+    var animals: [[String:Any]] = [["name":"bear", "imgUrl":"bear-icon", "description":"", "cost":2], ["name":"penguin", "imgUrl":"penguin-icon", "description":"", "cost":5], ["name":"turtle", "imgUrl":"turtle-icon", "description":"", "cost":10], ["name":"turtle", "imgUrl":"turtle-icon", "description":"", "cost":2], ["name":"turtle", "imgUrl":"turtle-icon", "description":"", "cost":2], ["name":"turtle", "imgUrl":"turtle-icon", "description":"", "cost":2], ["name":"bee", "imgUrl":"turtle-icon", "description":"", "cost":100], ["name":"turtle", "imgUrl":"turtle-icon", "description":"", "cost":2], ["name":"turtle", "imgUrl":"turtle-icon", "description":"", "cost":2]]
 }

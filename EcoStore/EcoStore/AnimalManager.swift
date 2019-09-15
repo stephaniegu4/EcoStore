@@ -10,7 +10,7 @@ import UIKit
 
 class AnimalManager {
     
-    public var shared = AnimalManager()
+    static var shared = AnimalManager()
     
     //MARK:- User Default Animal Data
     public var allAnimalData: [String:AnyObject]? {
