@@ -27,5 +27,6 @@ class DataModelManager {
     // MARK:- Remove User Defaults
     func removeUserDefaults() {
         UserDefaults.standard.removeObject(forKey: "restoredAnimalData")
+        UserDefaults.standard.removeObject(forKey: "userPoints")
     }
 }
