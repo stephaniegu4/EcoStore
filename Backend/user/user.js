@@ -9,6 +9,7 @@ function CreateUserMethods(app, db){
     CheckEmailExists(app, db);
     DeleteUser(app, db);
     AddUser(app, db);
+    IncrementUserPoints(app, db);
 }
 
 // Returns all Users currently in database.
@@ -42,15 +43,6 @@ function CheckEmailExists(app, db){
                 }
             });
         }
-    });
-}
-
-// Gets hashed password from database, given user's id.
-function GetUserPassword(db, email) {
-    db.collection("Users").findOne({email: email}).then((result) => {
-        return {
-            hi: "hi"
-        };
     });
 }
 
