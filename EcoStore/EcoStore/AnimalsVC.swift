@@ -12,9 +12,12 @@ protocol PresentModalDelegate {
     func presentModal(animal: [String:Any])
 }
 
+
 class AnimalsVC: CommonViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, PresentModalDelegate {
 
+    //MARK:- Variables
     private let animals = DMM.animals
+    private let restored: [Int]? = AnimalManager.shared.restoredAnimalData
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +43,11 @@ class AnimalsVC: CommonViewController, UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! AnimalCell
         cell.animal = animals[indexPath.row]
+        if let restored = restored?.contains(indexPath.row), restored {
+            cell.restored = true
+        } else {
+            cell.restored = false
+        }
         cell.delegate = self
         return cell
     }
@@ -83,6 +91,16 @@ class AnimalCell: UICollectionViewCell {
             if let imgUrl = animal["imgUrl"] as? String {
                 animalIcon = UIImage(named: imgUrl)
                 animalIconView.setImage(animalIcon, for: .normal)
+            }
+        }
+    }
+    
+    fileprivate var restored = false {
+        didSet {
+            if restored {
+                animalIconView.alpha = 1
+            } else {
+                animalIconView.alpha = 0.5
             }
         }
     }

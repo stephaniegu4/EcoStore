@@ -68,8 +68,7 @@ class AnimalModalVC: CommonViewController {
         pointsReqLabel.font = UIFont(name: "AvenirNext-DemiBold", size: 30)
         pointsView.addSubview(pointsReqLabel)
         
-        //descriptionLabel.text = animal["description"] as? String ?? "sample text"
-        descriptionLabel.text = "Lorem dorem ipsum some latin text for placeholder text description loL!"
+        descriptionLabel.text = animal["description"] as? String ?? "sample text"
         descriptionLabel.font = UIFont(name: "AvenirNext-DemiBold", size: 16)
         descriptionLabel.numberOfLines = 0
         descriptionLabel.lineBreakMode = .byWordWrapping
