@@ -10,6 +10,7 @@ function CreateUserMethods(app, db){
     DeleteUser(app, db);
     AddUser(app, db);
     IncrementUserPoints(app, db);
+    AddRestoredAnimal(app, db);
 }
 
 // Returns all Users currently in database.
@@ -129,6 +130,78 @@ function IncrementUserPoints(app, db){
                                     res.json({
                                         code: 400,
                                         msg: "Cound not find user with given ID"
+                                    });
+                                }
+                              })
+                              .catch(err => {
+                                  res.json({
+                                      code: 500,
+                                      msg: err.msg
+                                  });
+                              });
+                    }
+                });
+            } catch (err) {
+                res.json({
+                    code: 500,
+                    msg: "An invalid user ID was given."
+                });
+            }
+        }
+    });
+}
+
+// Adds animal to user's restored animal collection.
+function AddRestoredAnimal(app, db){
+    app.post("/AddRestoredAnimal", (req, res) => {
+        var id = req.body.id;
+        var animalID = Number(req.body.animalID);
+        if (!id || !animalID) {
+            res.json({
+                code: 400,
+                msg: "The given inputs were not valid."
+            });
+        } else {
+            try {
+                db.collection("Users").find({_id: new mongodb.ObjectID(id)}).toArray((err, result) => {
+                    if (err){
+                        res.json({
+                            code: 500,
+                            msg: "There was an error fetching user data."
+                        });
+                    } else if (result.length === 0) {
+                        res.json({
+                            code: 400,
+                            msg: "A user with the given ID could not be found."
+                        });
+                    } else {
+                        var userToUpdate = result[0];
+                        var prevAnimals = userToUpdate.restoredAnimals;
+
+                        if (prevAnimals.indexOf(animalID) != -1){
+                            res.json({
+                                code: 400,
+                                msg: "This animal already belongs to the user."
+                            });
+                            return;
+                        }
+
+                        prevAnimals.push(animalID);
+                        console.log(prevAnimals); 
+
+                        db.collection("Users")
+                            .findOneAndUpdate({_id: new mongodb.ObjectID(id)}, {$set: {"restoredAnimals": prevAnimals}})
+                            .then(updatedDoc => {
+                                if (updatedDoc) {
+                                  res.json({
+                                      code: 200,
+                                      msg: "Animals successfully updated",
+                                      updatedAnimals: prevAnimals
+                                  });
+                                } else {
+                                    res.json({
+                                        code: 400, 
+                                        msg: "Could not find user with given ID"
                                     });
                                 }
                               })
