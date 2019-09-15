@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00E1EE73232E27C300750447 /* WebServicesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E1EE72232E27C300750447 /* WebServicesManager.swift */; };
 		00E365E6232D66A5009C7FB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00E365E5232D66A5009C7FB2 /* Assets.xcassets */; };
 		00E365F0232D6881009C7FB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E365DE232D66A4009C7FB2 /* AppDelegate.swift */; };
 		00E365F3232D68EB009C7FB2 /* SplashScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E365F2232D68EB009C7FB2 /* SplashScreenVC.swift */; };
@@ -20,10 +21,12 @@
 		00E36603232D8A76009C7FB2 /* DataModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E36602232D8A76009C7FB2 /* DataModelManager.swift */; };
 		00E36605232D90DF009C7FB2 /* AnimalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E36604232D90DF009C7FB2 /* AnimalManager.swift */; };
 		00E36607232DC14D009C7FB2 /* AnimalModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E36606232DC14D009C7FB2 /* AnimalModalVC.swift */; };
+		822755C1557D8808A5FF263B /* Pods_EcoStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE2ECF780035DD904FAECF7 /* Pods_EcoStore.framework */; };
 		C2CAEDC0232DAFF500330905 /* trashRecognition.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C2CAEDBF232DAFF500330905 /* trashRecognition.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00E1EE72232E27C300750447 /* WebServicesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServicesManager.swift; sourceTree = "<group>"; };
 		00E365DB232D66A4009C7FB2 /* EcoStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EcoStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E365DE232D66A4009C7FB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00E365E5232D66A5009C7FB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -39,6 +42,9 @@
 		00E36602232D8A76009C7FB2 /* DataModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelManager.swift; sourceTree = "<group>"; };
 		00E36604232D90DF009C7FB2 /* AnimalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalManager.swift; sourceTree = "<group>"; };
 		00E36606232DC14D009C7FB2 /* AnimalModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalModalVC.swift; sourceTree = "<group>"; };
+		6FFAA2903F159C01CE8C1DD8 /* Pods-EcoStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EcoStore.debug.xcconfig"; path = "Target Support Files/Pods-EcoStore/Pods-EcoStore.debug.xcconfig"; sourceTree = "<group>"; };
+		A0C6E870E11FA81448E67C87 /* Pods-EcoStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EcoStore.release.xcconfig"; path = "Target Support Files/Pods-EcoStore/Pods-EcoStore.release.xcconfig"; sourceTree = "<group>"; };
+		BEE2ECF780035DD904FAECF7 /* Pods_EcoStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EcoStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2CAEDBF232DAFF500330905 /* trashRecognition.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = trashRecognition.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -47,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				822755C1557D8808A5FF263B /* Pods_EcoStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +65,8 @@
 			children = (
 				00E365DD232D66A4009C7FB2 /* EcoStore */,
 				00E365DC232D66A4009C7FB2 /* Products */,
+				EF5E2CBCCBFF6E117E711DC4 /* Pods */,
+				605824E288ED8E0065EA9F0B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,8 +96,27 @@
 				00E36604232D90DF009C7FB2 /* AnimalManager.swift */,
 				00E36600232D8983009C7FB2 /* RecyclePageVC.swift */,
 				00E36606232DC14D009C7FB2 /* AnimalModalVC.swift */,
+				00E1EE72232E27C300750447 /* WebServicesManager.swift */,
 			);
 			path = EcoStore;
+			sourceTree = "<group>";
+		};
+		605824E288ED8E0065EA9F0B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BEE2ECF780035DD904FAECF7 /* Pods_EcoStore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF5E2CBCCBFF6E117E711DC4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6FFAA2903F159C01CE8C1DD8 /* Pods-EcoStore.debug.xcconfig */,
+				A0C6E870E11FA81448E67C87 /* Pods-EcoStore.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -98,9 +126,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E365ED232D66A5009C7FB2 /* Build configuration list for PBXNativeTarget "EcoStore" */;
 			buildPhases = (
+				8D7F55810FB5944D6DA68D93 /* [CP] Check Pods Manifest.lock */,
 				00E365D7232D66A4009C7FB2 /* Sources */,
 				00E365D8232D66A4009C7FB2 /* Frameworks */,
 				00E365D9232D66A4009C7FB2 /* Resources */,
+				C4C66B590FD8554D770D477C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,6 +185,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8D7F55810FB5944D6DA68D93 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EcoStore-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4C66B590FD8554D770D477C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EcoStore/Pods-EcoStore-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EcoStore/Pods-EcoStore-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EcoStore/Pods-EcoStore-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		00E365D7232D66A4009C7FB2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -168,6 +240,7 @@
 				00E365F5232D6BD4009C7FB2 /* CommonViewController.swift in Sources */,
 				00E365F3232D68EB009C7FB2 /* SplashScreenVC.swift in Sources */,
 				00E36603232D8A76009C7FB2 /* DataModelManager.swift in Sources */,
+				00E1EE73232E27C300750447 /* WebServicesManager.swift in Sources */,
 				00E365FB232D7D35009C7FB2 /* TabBarController.swift in Sources */,
 				00E365F7232D71A5009C7FB2 /* LoginVC.swift in Sources */,
 				00E365F0232D6881009C7FB2 /* AppDelegate.swift in Sources */,
@@ -297,6 +370,7 @@
 		};
 		00E365EE232D66A5009C7FB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FFAA2903F159C01CE8C1DD8 /* Pods-EcoStore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -317,6 +391,7 @@
 		};
 		00E365EF232D66A5009C7FB2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0C6E870E11FA81448E67C87 /* Pods-EcoStore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
