@@ -27,14 +27,21 @@ class WebServicesManager {
     var userPoints: Int? {
         set {
             UserDefaults.standard.set(newValue, forKey: "userPoints")
-            updateLocalData()
+            let lastIndex = AnimalManager.shared.restoredAnimalData?.last ?? -1
+            let animals = DMM.animals
+            if lastIndex < animals.count - 1 {
+                if let cost = animals[lastIndex + 1]["cost"] as? Int {
+                    if let newValue = newValue {
+                        if newValue >= cost {
+                            AnimalManager.shared.restoreAnimal(index: lastIndex + 1)
+                        }
+                    }
+                }
+            }
+            //updateLocalData()
         }
         get {
-            if let _ = localUserPoints {
-                return localUserPoints
-            } else {
-                return UserDefaults.standard.object(forKey: "userPoints") as? Int
-            }
+            return UserDefaults.standard.object(forKey: "userPoints") as? Int
         }
     }
     
@@ -94,6 +101,7 @@ class WebServicesManager {
                 if data["code"] as? Int == 200 {
                     if let points = data["updatedPoints"] as? Int {
                         self.userPoints = points
+                        print(points)
                     }
                     completion?(true)
                 } else {
@@ -105,6 +113,22 @@ class WebServicesManager {
             } else {
                 print("Empty response.")
                 completion?(false)
+            }
+        }
+    }
+    
+    func addRestoredAnimalsService(index: Int, completion:((Bool)->Void)?) {
+        let service = "/AddRestoredAnimals"
+        let responseType = HTTPMethod.post
+        let par:[String:Any] = ["id": self.userId, "animalID": index]
+        
+        Alamofire.request(url + service, method: responseType, parameters: par).responseJSON { responseData in
+            if let data = responseData.result.value as? [String:AnyObject] {
+                if data["code"] as? Int == 200 {
+                    completion?(true)
+                } else {
+                    completion?(false)
+                }
             }
         }
     }

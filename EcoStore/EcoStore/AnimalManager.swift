@@ -33,4 +33,9 @@ class AnimalManager {
         localRestoredAnimalData = restoredAnimalData
     }
     
+    func restoreAnimal(index: Int) {
+        restoredAnimalData?.append(index)
+        WebServicesManager.shared.addRestoredAnimalsService(index: index, completion: nil)
+    }
+    
 }

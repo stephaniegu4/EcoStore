@@ -33,13 +33,14 @@ class MapVC : CommonViewController {
     
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         
         var leftAlign = true
         var y: CGFloat = 100
         var totalContentSize = y
         
+        // bad implementation -- later change to custom collection view in order to properly reload data when needed
         for (index, animal) in animals.enumerated() {
             let imageUrl = animal["imgUrl"] as? String
             let button = UIButton(type: .custom)
@@ -54,7 +55,7 @@ class MapVC : CommonViewController {
             }
             leftAlign = !leftAlign
             if let restored = restored?.contains(index), !restored {
-                button.alpha = 0.5
+                button.alpha = 0.3
             }
             scrollView.addSubview(button)
             y += (button.frame.height + 100)

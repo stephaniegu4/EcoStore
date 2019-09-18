@@ -58,7 +58,6 @@ class UserVC: CommonViewController {
         pointsIconView.image = pointsIcon
         pointsView.addSubview(pointsIconView)
         
-        pointsLabel.text = "\(WebServicesManager.shared.userPoints ?? 0)"
         pointsLabel.textAlignment = .center
         pointsLabel.font = UIFont(name: "AvenirNext-Regular", size: 25)
         pointsView.addSubview(pointsLabel)
@@ -68,7 +67,6 @@ class UserVC: CommonViewController {
         restoredIconView.image = restoredIcon
         restoredView.addSubview(restoredIconView)
         
-        restoredLabel.text = "\(AnimalManager.shared.restoredAnimalData?.count ?? 0) animals restored!"
         restoredLabel.font = UIFont(name: "AvenirNext-Regular", size: 25)
         restoredLabel.textAlignment = .center
         restoredView.addSubview(restoredLabel)
@@ -80,7 +78,8 @@ class UserVC: CommonViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        topView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height * 0.7)
+        //topView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height * 0.7)
+        topView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         
         profileImgView.frame = CGRect(x: 0, y: 150, width: 250, height: 250)
         profileImgView.center.x = view.center.x
@@ -95,6 +94,7 @@ class UserVC: CommonViewController {
         
         pointsIconView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
         
+        pointsLabel.text = "\(WebServicesManager.shared.userPoints ?? 0)"
         pointsLabel.sizeToFit()
         pointsLabel.frame.origin = CGPoint(x: pointsIconView.frame.maxX + 5, y: 0)
         
@@ -105,6 +105,7 @@ class UserVC: CommonViewController {
         
         restoredIconView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
         
+        restoredLabel.text = "\(AnimalManager.shared.restoredAnimalData?.count ?? 0) animals restored!"
         restoredLabel.sizeToFit()
         restoredLabel.frame.origin = CGPoint(x: restoredIconView.frame.maxX + 10, y: 0)
         

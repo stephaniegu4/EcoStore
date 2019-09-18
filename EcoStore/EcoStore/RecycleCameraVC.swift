@@ -149,14 +149,15 @@ class RecycleCameraVC: CommonViewController, AVCaptureVideoDataOutputSampleBuffe
         self.added = true
         
         // Make API call to increment user's recycle number.
-        
-        let alert = UIAlertController(title: "Thanks for recycling!", message: "Your new count is __. Woohoo! Way to go!",
-                                      preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: {
-            (action) in alert.dismiss(animated: true, completion: nil)
+        WebServicesManager.shared.incrementPointsService() { success in
+            let alert = UIAlertController(title: "Thanks for recycling!", message: "Your new count is \(WebServicesManager.shared.userPoints ?? 0). Woohoo! Way to go!",
+                preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: {
+                (action) in alert.dismiss(animated: true, completion: nil)
                 self.dismiss(animated: true, completion: nil)
-        }))
-        self.present(alert, animated: true, completion: nil)
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     @objc func dismissAction() {
