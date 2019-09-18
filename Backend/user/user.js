@@ -131,7 +131,7 @@ function IncrementUserPoints(app, db){
                                   res.json({
                                       code: 200,
                                       msg: "The user's points were successfully updated.",
-                                      updatedPoints: updatedDoc.value.points
+                                      updatedPoints: prevPoints + 1
                                   });
                                 } else {
                                     res.json({
